@@ -1,0 +1,39 @@
+float ballX = 150;
+float ballY = 0;
+float h = 50;
+
+float speedY = 2;
+
+void setup() {
+  size(400,400);
+  smooth();
+  noStroke();
+  
+
+  ellipseMode(CORNER);
+
+}
+
+void draw() {
+
+  background(100);
+  fill(255);
+ 
+  ellipse(ballX, ballY, h,h);
+ 
+  speedY = speedY + 0.5;  
+  
+  ballY = ballY + speedY; 
+  
+  
+  if (ballY > height - h) {
+    ballY = height - h;
+    speedY = speedY * -0.98;
+    
+  }
+  else if (ballY <= 0) { 
+    speedY = -speedY;
+  }
+
+  
+}
